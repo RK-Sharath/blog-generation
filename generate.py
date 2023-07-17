@@ -20,7 +20,7 @@ def blog_outline(topic):
     # Instantiate LLM model
     llm=LangChainInterface(model=ModelType.FLAN_T5_11B, params=params, credentials=creds)
     # Prompt
-    template = "As an experienced data scientist and technical writer, generate an outline for a blog about {topic}."
+    template = "As an experienced professional, generate an outline for a blog about {topic}."
     prompt = PromptTemplate(input_variables=["topic"], template=template)
     prompt_query = prompt.format(topic=topic)
     # Run LLM model
