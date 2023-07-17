@@ -38,6 +38,7 @@ def blog_outline(topic):
 with st.form("myform"):
     topic_text = st.text_input("Enter prompt:", "")
     submitted = st.form_submit_button("Submit")
+    refresh = st.experimental_rerun("Clear Form")
     if not genai_api_key:
         st.info("Please add your GenAI API KEY & GenAI API URL to continue.")
     elif submitted:
