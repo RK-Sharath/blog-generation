@@ -5,7 +5,7 @@ from genai.extensions.langchain import LangChainInterface
 from genai.schemas import ModelType, GenerateParams
 from genai.model import Credentials
 
-st.title("Blog Generator App")
+st.title("Blog Generator")
 st.caption("This app was developed by Sharath Kumar RK, Ecosystem Engineering Watsonx team")
 
 genai_api_key = st.sidebar.text_input("GenAI API Key", type="password")
@@ -13,7 +13,7 @@ genai_api_url = st.sidebar.text_input("GenAI API URL", type="default")
 
 
 def blog_outline(topic):
-    # Create creds object
+    # Create a creds object
     creds = Credentials(api_key=genai_api_key, api_endpoint=genai_api_url)
     # Define parameters
     params = GenerateParams(decoding_method="sample", temperature=0.7, max_new_tokens=400, min_new_tokens=150, repetition_penalty=2)
