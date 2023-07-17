@@ -13,8 +13,11 @@ genai_api_url = st.sidebar.text_input("GenAI API URL", type="default")
 max_tokens = st.sidebar.text_input("Max new tokens", type="default")
 min_tokens = st.sidebar.text_input("Min new tokens", type="default")
 decoding_method = st.sidebar.text_input("Decoding method", type="default")
+st.caption("Choose greedy or sample")
 repetition_penalty = st.sidebar.text_input("Repetition penalty", type="default")
+st.caption("Choose either 1 or 2")
 temperature = st.sidebar.text_input("Temperature", type="default")
+st.caption("Choose values between 0 & 2")
 
 
 
