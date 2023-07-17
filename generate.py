@@ -24,7 +24,7 @@ def blog_outline(topic):
     # Define parameters
     params = GenerateParams(decoding_method=decoding_method, temperature=temperature, max_new_tokens=max_tokens, min_new_tokens=min_tokens, repetition_penalty=repetition_penalty)
     # Instantiate LLM model
-    llm=LangChainInterface(model=ModelType.FLAN_T5_11B, params=params, credentials=creds)
+    llm=LangChainInterface(model=ModelType.FLAN_UL2, params=params, credentials=creds)
     # Prompt
     template = "As an experienced professional, write about {topic}."
     prompt = PromptTemplate(input_variables=["topic"], template=template)
