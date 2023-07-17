@@ -6,7 +6,7 @@ from genai.schemas import ModelType, GenerateParams
 from genai.model import Credentials
 
 st.title("Content generator App")
-st.caption("This app was developed by Sharath Kumar RK, Ecosystem Engineering Watsonx team")
+st.caption("This app was developed by Sharath Kumar RK, IBM Ecosystem Engineering Watsonx team")
 
 genai_api_key = st.sidebar.text_input("GenAI API Key", type="password")
 genai_api_url = st.sidebar.text_input("GenAI API URL", type="default")
