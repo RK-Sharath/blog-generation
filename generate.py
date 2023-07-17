@@ -1,5 +1,4 @@
 import streamlit as st
-from langchain.llms import OpenAI
 from langchain.prompts import PromptTemplate
 from genai.extensions.langchain import LangChainInterface
 from genai.schemas import ModelType, GenerateParams
