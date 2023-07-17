@@ -17,7 +17,7 @@ temperature = st.sidebar.text_input("Temperature (Choose a decimal number betwee
 
 
 
-def blog_outline(topic):
+def gen_content(topic):
     # Create a creds object
     creds = Credentials(api_key=genai_api_key, api_endpoint=genai_api_url)
     # Define parameters
@@ -42,4 +42,4 @@ with st.form("myform"):
             if not genai_api_key:
                 st.info("Please add your GenAI API KEY & GenAI API URL to continue.")
             elif submitted:
-                blog_outline(topic_text)
+                gen_content(topic_text)
