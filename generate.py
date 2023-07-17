@@ -39,6 +39,6 @@ with st.form("myform"):
     topic_text = st.text_input("Enter prompt:", "")
     submitted = st.form_submit_button("Submit")
     if not genai_api_key:
-        st.info("Please add your GenAI API key to continue.")
+        st.info("Please add your GenAI API key & GenAI API URL to continue.")
     elif submitted:
         blog_outline(topic_text)
