@@ -4,7 +4,7 @@ from genai.extensions.langchain import LangChainInterface
 from genai.schemas import ModelType, GenerateParams
 from genai.model import Credentials
 
-st.subtitle("Content generator App powered by IBM Watsonx")
+st.subheader("Content generator App powered by IBM Watsonx")
 st.caption("This app was developed by Sharath Kumar RK, IBM Ecosystem Engineering Watsonx team")
 
 genai_api_key = st.sidebar.text_input("GenAI API Key", type="password")
