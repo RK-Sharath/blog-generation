@@ -17,7 +17,7 @@ temperature = st.sidebar.text_input("Temperature (Choose a decimal number betwee
 
 
 
-def gen_content(topic):
+def gen_content(question):
     # Create a creds object
     creds = Credentials(api_key=genai_api_key, api_endpoint=genai_api_url)
     # Define parameters
@@ -35,11 +35,11 @@ def gen_content(topic):
 
 
 with st.form("myform"):
-    topic_text = st.text_input("Enter prompt (What is your query):", "")
+    question = st.text_input("Enter prompt:", "")
     submitted = st.form_submit_button("Submit")
     if submitted and genai_api_key.startswith('pak-'):
         with st.spinner('Working on it...'):
             if not genai_api_key:
                 st.info("Please add your GenAI API KEY & GenAI API URL to continue.")
             elif submitted:
-                gen_content(topic_text)
+                gen_content(question)
