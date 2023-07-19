@@ -4,7 +4,7 @@ from genai.extensions.langchain import LangChainInterface
 from genai.schemas import ModelType, GenerateParams
 from genai.model import Credentials
 
-st.title("Content generator App powered by IBM Watsonx")
+st.subtitle("Content generator App powered by IBM Watsonx")
 st.caption("This app was developed by Sharath Kumar RK, IBM Ecosystem Engineering Watsonx team")
 
 genai_api_key = st.sidebar.text_input("GenAI API Key", type="password")
@@ -35,7 +35,7 @@ def gen_content(query):
 
 
 with st.form("myform"):
-    query = st.text_input("Enter prompt (Ask me something):", "")
+    query = st.text_input("Enter prompt (Ask me a query):", "")
     submitted = st.form_submit_button("Submit")
     if submitted and genai_api_key.startswith('pak-'):
         with st.spinner('Working on it...'):
