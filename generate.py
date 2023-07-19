@@ -17,7 +17,7 @@ temperature = st.sidebar.text_input("Temperature (Choose a decimal number betwee
 
 
 
-def gen_content(question):
+def gen_content(query):
     # Create a creds object
     creds = Credentials(api_key=genai_api_key, api_endpoint=genai_api_url)
     # Define parameters
@@ -27,7 +27,7 @@ def gen_content(question):
     # Prompt
     template = "As an experienced professional, write about {topic}."
     prompt = PromptTemplate(input_variables=["topic"], template=template)
-    prompt_query = prompt.format(topic=question)
+    prompt_query = prompt.format(topic=query)
     # Run LLM model
     response = llm(prompt_query)
     # Print results
@@ -35,11 +35,11 @@ def gen_content(question):
 
 
 with st.form("myform"):
-    question = st.text_input("Enter prompt:", "")
+    query = st.text_input("Enter prompt:", "")
     submitted = st.form_submit_button("Submit")
     if submitted and genai_api_key.startswith('pak-'):
         with st.spinner('Working on it...'):
             if not genai_api_key:
                 st.info("Please add your GenAI API KEY & GenAI API URL to continue.")
             elif submitted:
-                gen_content(question)
+                gen_content(query)
