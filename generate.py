@@ -27,7 +27,7 @@ def gen_content(question):
     # Prompt
     template = "As an experienced professional, write about {topic}."
     prompt = PromptTemplate(input_variables=["topic"], template=template)
-    prompt_query = prompt.format(topic=topic)
+    prompt_query = prompt.format(topic=question)
     # Run LLM model
     response = llm(prompt_query)
     # Print results
