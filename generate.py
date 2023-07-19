@@ -35,7 +35,7 @@ def gen_content(topic):
 
 
 with st.form("myform"):
-    topic_text = st.text_input("Enter prompt (Ask me something):", "")
+    topic_text = st.text_input("Enter prompt (What is your query):", "")
     submitted = st.form_submit_button("Submit")
     if submitted and genai_api_key.startswith('pak-'):
         with st.spinner('Working on it...'):
