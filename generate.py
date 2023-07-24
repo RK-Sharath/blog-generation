@@ -9,11 +9,11 @@ st.caption("This app was developed by Sharath Kumar RK, IBM Ecosystem Engineerin
 
 genai_api_key = st.sidebar.text_input("GenAI API Key", type="password")
 genai_api_url = st.sidebar.text_input("GenAI API URL", type="default")
-max_tokens = st.sidebar.text_input("Max new tokens", type="default")
-min_tokens = st.sidebar.text_input("Min new tokens", type="default")
+max_tokens = st.sidebar.number_input("Max new tokens")
+min_tokens = st.sidebar.number_input("Min new tokens")
 decoding_method = st.sidebar.text_input("Decoding method (Choose either greedy or sample) ", type="default")
-repetition_penalty = st.sidebar.text_input("Repetition penalty (Choose either 1 or 2)" , type="default")
-temperature = st.sidebar.text_input("Temperature (Choose a decimal number between 0 & 2)" , type="default")
+repetition_penalty = st.sidebar.number_input("Repetition penalty (Choose either 1 or 2)")
+temperature = st.sidebar.number_input("Temperature (Choose a decimal number between 0 & 2)")
 
 
 
