@@ -35,7 +35,7 @@ def gen_content(query):
 
 
 with st.form("myform"):
-    query = st.text_input("Enter prompt (Ask me a query):", "")
+    query = st.text_input("Enter prompt:", "", placeholder="Ask me a query")
     submitted = st.form_submit_button("Submit")
     if submitted and genai_api_key.startswith('pak-'):
         with st.spinner('Working on it...'):
