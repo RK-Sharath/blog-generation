@@ -12,7 +12,12 @@ genai_api_url = st.sidebar.text_input("GenAI API URL", type="default")
 model = st.radio("Select the Watsonx LLM model",('google/flan-t5-xl','google/flan-t5-xxl','google/flan-ul2'))
 max_tokens = st.sidebar.number_input("Max new tokens")
 min_tokens = st.sidebar.number_input("Min new tokens")
-decoding_method = st.sidebar.text_input("Decoding method (Choose either greedy or sample) ", type="default")
+#decoding_method = st.sidebar.text_input("Decoding method (Choose either greedy or sample) ", type="default")
+with st.sidebar:
+    decoding_method = st.radio(
+        "Select decoding method",
+        ('greedy', 'sample')
+    )
 repetition_penalty = st.sidebar.number_input("Repetition penalty (Choose either 1 or 2)")
 temperature = st.sidebar.number_input("Temperature (Choose a decimal number between 0 & 2)")
 
