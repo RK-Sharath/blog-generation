@@ -9,11 +9,13 @@ st.caption("This app was developed by Sharath Kumar RK, IBM Ecosystem Engineerin
 
 genai_api_key = st.sidebar.text_input("GenAI API Key", type="password")
 genai_api_url = st.sidebar.text_input("GenAI API URL", type="default")
+model = st.radio("Select the LLM model",('ModelType.FLAN_T5_11B','ModelType.FLAN_UL2'))
 max_tokens = st.sidebar.number_input("Max new tokens")
 min_tokens = st.sidebar.number_input("Min new tokens")
 decoding_method = st.sidebar.text_input("Decoding method (Choose either greedy or sample) ", type="default")
 repetition_penalty = st.sidebar.number_input("Repetition penalty (Choose either 1 or 2)")
 temperature = st.sidebar.number_input("Temperature (Choose a decimal number between 0 & 2)")
+
 
 
 
@@ -23,7 +25,7 @@ def gen_content(query):
     # Define parameters
     params = GenerateParams(decoding_method=decoding_method, temperature=temperature, max_new_tokens=max_tokens, min_new_tokens=min_tokens, repetition_penalty=repetition_penalty)
     # Instantiate LLM model
-    llm=LangChainInterface(model=ModelType.FLAN_UL2, params=params, credentials=creds)
+    llm=LangChainInterface(model=model, params=params, credentials=creds)
     # Prompt
     template = "As an experienced professional, write about {topic}."
     prompt = PromptTemplate(input_variables=["topic"], template=template)
