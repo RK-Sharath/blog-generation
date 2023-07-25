@@ -1,7 +1,7 @@
 import streamlit as st
 from langchain.prompts import PromptTemplate
 from genai.extensions.langchain import LangChainInterface
-from genai.schemas import ModelType, GenerateParams
+from genai.schemas import GenerateParams
 from genai.model import Credentials
 
 st.title("Content generator App powered by IBM Watsonx")
@@ -9,7 +9,7 @@ st.caption("This app was developed by Sharath Kumar RK, IBM Ecosystem Engineerin
 
 genai_api_key = st.sidebar.text_input("GenAI API Key", type="password")
 genai_api_url = st.sidebar.text_input("GenAI API URL", type="default")
-model = st.radio("Select the LLM model",('ModelType.FLAN_T5_11B','ModelType.FLAN_UL2'))
+model = st.radio("Select the LLM model",('google/flan-t5-xl','google/flan-t5-xxl','google/flan-ul2'))
 max_tokens = st.sidebar.number_input("Max new tokens")
 min_tokens = st.sidebar.number_input("Min new tokens")
 decoding_method = st.sidebar.text_input("Decoding method (Choose either greedy or sample) ", type="default")
