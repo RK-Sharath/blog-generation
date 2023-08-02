@@ -47,5 +47,5 @@ if query and genai_api_key.startswith('pak-'):
     with st.spinner('Working on it...'):
         if not genai_api_key:
             st.info("Please add your GenAI API KEY & GenAI API URL to continue.")
-        elif submitted:
+        elif query:
             gen_content(query)
