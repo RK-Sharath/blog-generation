@@ -16,7 +16,7 @@ min_tokens = st.sidebar.number_input("Min new tokens")
 with st.sidebar:
     decoding_method = st.radio(
         "Select decoding method",
-        ('greedy', 'sample')
+        ('sample', 'greedy')
     )
 repetition_penalty = st.sidebar.number_input("Repetition penalty (Choose either 1 or 2)")
 temperature = st.sidebar.number_input("Temperature (Choose a decimal number between 0 & 2)")
@@ -43,8 +43,7 @@ def gen_content(query):
 
 with st.form("myform"):
     query = st.text_input("Enter prompt:", "", placeholder="Ask me a query")
-    submitted = st.form_submit_button("Submit")
-    if submitted and genai_api_key.startswith('pak-'):
+    if query and genai_api_key.startswith('pak-'):
         with st.spinner('Working on it...'):
             if not genai_api_key:
                 st.info("Please add your GenAI API KEY & GenAI API URL to continue.")
