@@ -42,10 +42,10 @@ def gen_content(query):
 
 
 #with st.form("myform"):
-    query = st.text_input("Enter prompt:", "", placeholder="Ask me a query")
-    if query and genai_api_key.startswith('pak-'):
-        with st.spinner('Working on it...'):
-            if not genai_api_key:
-                st.info("Please add your GenAI API KEY & GenAI API URL to continue.")
-            elif submitted:
-                gen_content(query)
+query = st.text_input("Enter prompt:", "", placeholder="Ask me a query")
+if query and genai_api_key.startswith('pak-'):
+    with st.spinner('Working on it...'):
+        if not genai_api_key:
+            st.info("Please add your GenAI API KEY & GenAI API URL to continue.")
+        elif submitted:
+            gen_content(query)
