@@ -41,7 +41,7 @@ def gen_content(query):
     return st.info(response)
 
 
-with st.form("myform"):
+#with st.form("myform"):
     query = st.text_input("Enter prompt:", "", placeholder="Ask me a query")
     if query and genai_api_key.startswith('pak-'):
         with st.spinner('Working on it...'):
