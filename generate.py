@@ -9,7 +9,7 @@ st.caption("This app was developed by Sharath Kumar RK, IBM Ecosystem Engineerin
 
 genai_api_key = st.sidebar.text_input("GenAI API Key", type="password")
 genai_api_url = st.sidebar.text_input("GenAI API URL", type="default")
-model = st.radio("Select the Watsonx LLM model",('google/flan-t5-xl','google/flan-t5-xxl','google/flan-ul2'))
+model = st.radio("Select the Watsonx LLM model",('google/flan-t5-xl','google/flan-t5-xxl','google/flan-ul2','ibm/mpt-7b-instruct'))
 max_tokens = st.sidebar.number_input("Max new tokens", value=500)
 min_tokens = st.sidebar.number_input("Min new tokens", value=150)
 #decoding_method = st.sidebar.text_input("Decoding method (Choose either greedy or sample) ", type="default")
