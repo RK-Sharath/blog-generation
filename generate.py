@@ -9,7 +9,7 @@ st.caption("This app was developed by Sharath Kumar RK, IBM Ecosystem Engineerin
 
 genai_api_key = st.sidebar.text_input("GenAI API Key", type="password")
 genai_api_url = st.sidebar.text_input("GenAI API URL", type="default")
-model = st.radio("Select the Watsonx LLM model",('google/flan-t5-xl','google/flan-t5-xxl','google/flan-ul2','tiiuae/falcon-40b'))
+model = st.radio("Select the Watsonx LLM model",('google/flan-t5-xl','google/flan-t5-xxl','google/flan-ul2'))
 max_tokens = st.sidebar.number_input("Max new tokens", value=500)
 min_tokens = st.sidebar.number_input("Min new tokens", value=150)
 #decoding_method = st.sidebar.text_input("Decoding method (Choose either greedy or sample) ", type="default")
@@ -19,7 +19,7 @@ with st.sidebar:
         ('sample', 'greedy')
     )
 repetition_penalty = st.sidebar.number_input("Repetition penalty (Choose either 1 or 2)", value=2)
-temperature = st.sidebar.number_input("Temperature (Choose a decimal number between 0 & 2)", value=0.4)
+temperature = st.sidebar.number_input("Temperature (Choose a decimal number between 0 & 2)", min_value=1, max_value=2, value=0.4)
 top_k = st.sidebar.number_input("Top K tokens (Choose an integer between 0 to 100)", step=10, value=25)
 top_p = st.sidebar.number_input("Token probabilities (Choose a decimal number between 0 & 2)", step=0.1, value=0.5)
 
