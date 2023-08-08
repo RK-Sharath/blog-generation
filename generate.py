@@ -19,9 +19,9 @@ with st.sidebar:
         ('sample', 'greedy')
     )
 repetition_penalty = st.sidebar.number_input("Repetition penalty (Choose either 1 or 2)", min_value=1, max_value=2, value=2)
-temperature = st.sidebar.number_input("Temperature (Choose a decimal number between 0 & 2)", min_value=0, max_value=2, value=0.4)
+temperature = st.sidebar.number_input("Temperature (Choose a decimal number between 0 & 2)", min_value=0, max_value=2, value=1)
 top_k = st.sidebar.number_input("Top K tokens (Choose an integer between 0 to 100)", step=10, min_value=0, max_value=100, value=50)
-top_p = st.sidebar.number_input("Token probabilities (Choose a decimal number between 0 & 1)", min_value=0, max_value=1, value=0.5)
+top_p = st.sidebar.number_input("Token probabilities (Choose a decimal number between 0 & 1)", min_value=0, max_value=1, value=1)
 
 
 
