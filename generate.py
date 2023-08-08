@@ -20,8 +20,8 @@ with st.sidebar:
     )
 repetition_penalty = st.sidebar.number_input("Repetition penalty (Choose either 1 or 2)", value=2)
 temperature = st.sidebar.number_input("Temperature (Choose a decimal number between 0 & 2)", value=0.4)
-top_k = st.sidebar.number_input("Top K tokens (Choose an integer between 0 to 100)", value=25)
-top_p = st.sidebar.number_input("Token probabilities (Choose a decimal number between 0 & 2)", value=0.5)
+top_k = st.sidebar.number_input("Top K tokens (Choose an integer between 0 to 100)", step=10, value=25)
+top_p = st.sidebar.number_input("Token probabilities (Choose a decimal number between 0 & 2)", step=0.1, value=0.5)
 
 
 
