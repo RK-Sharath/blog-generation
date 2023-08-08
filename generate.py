@@ -20,6 +20,8 @@ with st.sidebar:
     )
 repetition_penalty = st.sidebar.number_input("Repetition penalty (Choose either 1 or 2)", value=2)
 temperature = st.sidebar.number_input("Temperature (Choose a decimal number between 0 & 2)", value=0.4)
+top_k = st.sidebar.number_input("Top K tokens (Choose an integer between 0 to 100)", value=25)
+top_p = st.sidebar.number_input("Token probabilities (Choose a decimal number between 0 & 2)", value=0.5)
 
 
 
@@ -28,7 +30,7 @@ def gen_content(query):
     # Create a creds object
     creds = Credentials(api_key=genai_api_key, api_endpoint=genai_api_url)
     # Define parameters
-    params = GenerateParams(decoding_method=decoding_method, temperature=temperature, max_new_tokens=max_tokens, min_new_tokens=min_tokens, repetition_penalty=repetition_penalty)
+    params = GenerateParams(decoding_method=decoding_method, temperature=temperature, max_new_tokens=max_tokens, min_new_tokens=min_tokens, repetition_penalty=repetition_penalty, top_k=top_k, top_p=top_p)
     # Instantiate LLM model
     llm=LangChainInterface(model=model, params=params, credentials=creds)
     # Prompt
