@@ -3,4 +3,3 @@ langchain>=0.0.217
 ibm-generative-ai[langchain]
 ibm-generative-ai
 duckduckgo-search
-anthropic
