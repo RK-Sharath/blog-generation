@@ -8,7 +8,7 @@ st.title("Content generator App powered by IBM Watsonx")
 st.caption("This app was developed by Sharath Kumar RK, IBM Ecosystem Engineering Watsonx team")
 
 genai_api_key = st.sidebar.text_input("GenAI API Key", type="password")
-genai_api_url = st.sidebar.text_input("GenAI API URL", type="default")
+genai_api_url = st.sidebar.text_input("GenAI API URL", type="password", value="https://bam-api.res.ibm.com/v1")
 model = st.radio("Select the Watsonx LLM model",('google/flan-t5-xl','google/flan-t5-xxl','google/flan-ul2'))
 max_tokens = st.sidebar.number_input("Max new tokens", value=500)
 min_tokens = st.sidebar.number_input("Min new tokens", value=150)
