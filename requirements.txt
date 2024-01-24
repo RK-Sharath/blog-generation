@@ -1,5 +1,5 @@
 streamlit>=1.24.0
-langchain>=0.0.217
+langchain>=0.0.354
 ibm-generative-ai[langchain]
-ibm-generative-ai
+ibm-generative-ai==0.1.19
 duckduckgo-search
