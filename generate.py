@@ -11,7 +11,7 @@ genai_api_key = st.sidebar.text_input("GenAI API Key", type="password")
 genai_api_url = st.sidebar.text_input("GenAI API URL", type="password", value="https://bam-api.res.ibm.com/v1")
 model = st.radio("Select the Watsonx LLM model",('google/flan-t5-xl','google/flan-t5-xxl','google/flan-ul2'))
 max_tokens = st.sidebar.number_input("Max new tokens", value=500)
-min_tokens = st.sidebar.number_input("Min new tokens", value=150)
+min_tokens = st.sidebar.number_input("Min new tokens", value=50)
 #decoding_method = st.sidebar.text_input("Decoding method (Choose either greedy or sample) ", type="default")
 with st.sidebar:
     decoding_method = st.radio(
